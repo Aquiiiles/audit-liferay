@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.liferay.audit.model.AuditEntry">
+		<field name="uuid" type="String" />
+		<field name="auditEntryId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityName" type="String" />
+		<field name="entityId" type="long" />
+		<field name="action" type="String" />
+		<field name="fieldName" type="String" />
+		<field name="oldValue" type="String" />
+		<field name="newValue" type="String" />
+	</model>
+</model-hints>

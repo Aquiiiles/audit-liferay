@@ -1,0 +1,1 @@
+create unique index IX_1C56CCF7 on AUDIT_AuditEntry (uuid_[$COLUMN_LENGTH:75$], groupId);
