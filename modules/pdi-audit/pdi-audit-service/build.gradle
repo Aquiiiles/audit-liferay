@@ -1,0 +1,12 @@
+dependencies {
+	api project(":modules:pdi-audit:pdi-audit-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../pdi-audit-api/src/main/java"
+	testDir = "../pdi-audit-test/src/testIntegration/java"
+}
+
+group = "com.liferay.audit"

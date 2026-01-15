@@ -1,0 +1,10 @@
+Bundle-Name: pdi-audit-api
+Bundle-SymbolicName: com.liferay.audit.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.liferay.audit.exception,\
+	com.liferay.audit.model,\
+	com.liferay.audit.service,\
+	com.liferay.audit.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../pdi-audit-service/service.xml
