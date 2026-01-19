@@ -51,6 +51,16 @@ public class AuditEntryLocalServiceUtil {
 		return getService().addAuditEntry(auditEntry);
 	}
 
+	public static AuditEntry addAuditEntry(
+		com.liferay.portal.kernel.service.ServiceContext serviceContext,
+		String entityName, long entityId, String action, String fieldName,
+		String oldValue, String newValue) {
+
+		return getService().addAuditEntry(
+			serviceContext, entityName, entityId, action, fieldName, oldValue,
+			newValue);
+	}
+
 	/**
 	 * Creates a new audit entry with the primary key. Does not add the audit entry to the database.
 	 *

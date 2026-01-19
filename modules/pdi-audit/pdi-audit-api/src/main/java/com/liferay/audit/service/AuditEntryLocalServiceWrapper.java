@@ -45,6 +45,17 @@ public class AuditEntryLocalServiceWrapper
 		return _auditEntryLocalService.addAuditEntry(auditEntry);
 	}
 
+	@Override
+	public com.liferay.audit.model.AuditEntry addAuditEntry(
+		com.liferay.portal.kernel.service.ServiceContext serviceContext,
+		String entityName, long entityId, String action, String fieldName,
+		String oldValue, String newValue) {
+
+		return _auditEntryLocalService.addAuditEntry(
+			serviceContext, entityName, entityId, action, fieldName, oldValue,
+			newValue);
+	}
+
 	/**
 	 * Creates a new audit entry with the primary key. Does not add the audit entry to the database.
 	 *

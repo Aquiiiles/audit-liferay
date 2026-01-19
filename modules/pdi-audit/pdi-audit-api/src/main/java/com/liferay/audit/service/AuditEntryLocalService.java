@@ -20,6 +20,7 @@ import com.liferay.portal.kernel.search.Indexable;
 import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.service.BaseLocalService;
 import com.liferay.portal.kernel.service.PersistedModelLocalService;
+import com.liferay.portal.kernel.service.ServiceContext;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -67,6 +68,10 @@ public interface AuditEntryLocalService
 	 */
 	@Indexable(type = IndexableType.REINDEX)
 	public AuditEntry addAuditEntry(AuditEntry auditEntry);
+
+	public AuditEntry addAuditEntry(
+		ServiceContext serviceContext, String entityName, long entityId,
+		String action, String fieldName, String oldValue, String newValue);
 
 	/**
 	 * Creates a new audit entry with the primary key. Does not add the audit entry to the database.
