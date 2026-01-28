@@ -80,6 +80,11 @@ public class AuditEntryLocalServiceWrapper
 		return _auditEntryLocalService.createPersistedModel(primaryKeyObj);
 	}
 
+	@Override
+	public void deleteAuditEntriesByGroupId(long groupId) {
+		_auditEntryLocalService.deleteAuditEntriesByGroupId(groupId);
+	}
+
 	/**
 	 * Deletes the audit entry from the database. Also notifies the appropriate model listeners.
 	 *

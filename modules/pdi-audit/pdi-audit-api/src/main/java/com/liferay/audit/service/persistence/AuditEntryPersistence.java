@@ -379,6 +379,149 @@ public interface AuditEntryPersistence extends BasePersistence<AuditEntry> {
 	public int countByUuid_C(String uuid, long companyId);
 
 	/**
+	 * Returns all the audit entries where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @return the matching audit entries
+	 */
+	public java.util.List<AuditEntry> findByGroupId(long groupId);
+
+	/**
+	 * Returns a range of all the audit entries where groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>AuditEntryModelImpl</code>.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of audit entries
+	 * @param end the upper bound of the range of audit entries (not inclusive)
+	 * @return the range of matching audit entries
+	 */
+	public java.util.List<AuditEntry> findByGroupId(
+		long groupId, int start, int end);
+
+	/**
+	 * Returns an ordered range of all the audit entries where groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>AuditEntryModelImpl</code>.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of audit entries
+	 * @param end the upper bound of the range of audit entries (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching audit entries
+	 */
+	public java.util.List<AuditEntry> findByGroupId(
+		long groupId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator<AuditEntry>
+			orderByComparator);
+
+	/**
+	 * Returns an ordered range of all the audit entries where groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>AuditEntryModelImpl</code>.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of audit entries
+	 * @param end the upper bound of the range of audit entries (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @param useFinderCache whether to use the finder cache
+	 * @return the ordered range of matching audit entries
+	 */
+	public java.util.List<AuditEntry> findByGroupId(
+		long groupId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator<AuditEntry>
+			orderByComparator,
+		boolean useFinderCache);
+
+	/**
+	 * Returns the first audit entry in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching audit entry
+	 * @throws NoSuchAuditEntryException if a matching audit entry could not be found
+	 */
+	public AuditEntry findByGroupId_First(
+			long groupId,
+			com.liferay.portal.kernel.util.OrderByComparator<AuditEntry>
+				orderByComparator)
+		throws NoSuchAuditEntryException;
+
+	/**
+	 * Returns the first audit entry in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching audit entry, or <code>null</code> if a matching audit entry could not be found
+	 */
+	public AuditEntry fetchByGroupId_First(
+		long groupId,
+		com.liferay.portal.kernel.util.OrderByComparator<AuditEntry>
+			orderByComparator);
+
+	/**
+	 * Returns the last audit entry in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching audit entry
+	 * @throws NoSuchAuditEntryException if a matching audit entry could not be found
+	 */
+	public AuditEntry findByGroupId_Last(
+			long groupId,
+			com.liferay.portal.kernel.util.OrderByComparator<AuditEntry>
+				orderByComparator)
+		throws NoSuchAuditEntryException;
+
+	/**
+	 * Returns the last audit entry in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching audit entry, or <code>null</code> if a matching audit entry could not be found
+	 */
+	public AuditEntry fetchByGroupId_Last(
+		long groupId,
+		com.liferay.portal.kernel.util.OrderByComparator<AuditEntry>
+			orderByComparator);
+
+	/**
+	 * Returns the audit entries before and after the current audit entry in the ordered set where groupId = &#63;.
+	 *
+	 * @param auditEntryId the primary key of the current audit entry
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next audit entry
+	 * @throws NoSuchAuditEntryException if a audit entry with the primary key could not be found
+	 */
+	public AuditEntry[] findByGroupId_PrevAndNext(
+			long auditEntryId, long groupId,
+			com.liferay.portal.kernel.util.OrderByComparator<AuditEntry>
+				orderByComparator)
+		throws NoSuchAuditEntryException;
+
+	/**
+	 * Removes all the audit entries where groupId = &#63; from the database.
+	 *
+	 * @param groupId the group ID
+	 */
+	public void removeByGroupId(long groupId);
+
+	/**
+	 * Returns the number of audit entries where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @return the number of matching audit entries
+	 */
+	public int countByGroupId(long groupId);
+
+	/**
 	 * Caches the audit entry in the entity cache if it is enabled.
 	 *
 	 * @param auditEntry the audit entry

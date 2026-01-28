@@ -81,6 +81,10 @@ public class AuditEntryLocalServiceUtil {
 		return getService().createPersistedModel(primaryKeyObj);
 	}
 
+	public static void deleteAuditEntriesByGroupId(long groupId) {
+		getService().deleteAuditEntriesByGroupId(groupId);
+	}
+
 	/**
 	 * Deletes the audit entry from the database. Also notifies the appropriate model listeners.
 	 *

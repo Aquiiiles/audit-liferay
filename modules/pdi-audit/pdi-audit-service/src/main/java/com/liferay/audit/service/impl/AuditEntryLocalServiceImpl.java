@@ -68,6 +68,10 @@ public class AuditEntryLocalServiceImpl
 		return auditEntryPersistence.update(auditEntry);
 	}
 
+	public void deleteAuditEntriesByGroupId(long groupId) {
+		auditEntryPersistence.removeByGroupId(groupId);
+	}
+
 	@Reference
 	private UserLocalService _userLocalService;
 }

@@ -88,6 +88,8 @@ public interface AuditEntryLocalService
 	public PersistedModel createPersistedModel(Serializable primaryKeyObj)
 		throws PortalException;
 
+	public void deleteAuditEntriesByGroupId(long groupId);
+
 	/**
 	 * Deletes the audit entry from the database. Also notifies the appropriate model listeners.
 	 *
