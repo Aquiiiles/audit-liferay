@@ -44,7 +44,7 @@ public class ObjectEntryAuditListener
                     serviceContext,
                     objectEntry.getModelClassName(),
                     objectEntry.getObjectEntryId(),
-                    "CREATE",
+                    "CREATED",
                     null,
                     null,
                     objectEntry.getTitleValue()
@@ -86,11 +86,38 @@ public class ObjectEntryAuditListener
                     serviceContext,
                     objectEntry.getModelClassName(),
                     objectEntry.getObjectEntryId(),
-                    "UPDATE",
+                    "UPDATED",
                     fieldName,
                     (oldValue != null) ? oldValue.toString() : null,
                     (newValue != null) ? newValue.toString() : null
             );
+        }
+    }
+
+    @Override
+    public void onAfterRemove(ObjectEntry objectEntry)
+            throws ModelListenerException {
+
+        ServiceContext serviceContext =
+                ServiceContextThreadLocal.getServiceContext();
+
+        if (serviceContext == null) {
+            return;
+        }
+
+        try {
+            _auditEntryLocalService.addAuditEntry(
+                    serviceContext,
+                    objectEntry.getModelClassName(),
+                    objectEntry.getObjectEntryId(),
+                    "DELETED",
+                    null,
+                    objectEntry.getTitleValue(),
+                    null
+            );
+        }
+        catch (PortalException exception) {
+            throw new ModelListenerException(exception);
         }
     }
 
