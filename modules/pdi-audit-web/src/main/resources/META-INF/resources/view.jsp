@@ -9,7 +9,7 @@
 
 <liferay-ui:search-container
 	emptyResultsMessage="no-audit-entries"
-	total="${auditEntries.size()}"
+	total="${auditEntriesTotal}"
 	delta="20">
 
 	<liferay-ui:search-container-results
